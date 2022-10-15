@@ -23,7 +23,7 @@ const port = inputPort ?? 3000
 // Do not be nice about exiting.
 
 readIndex = () => {
-	fs.open('./public/index.html', 'r', (err, f) => {
+	fs.readFile('./public/index.html', (err, f) => {
 		if(err){
 			return console.error(err)
 		}
@@ -31,6 +31,7 @@ readIndex = () => {
 	})
 }
 
+//readIndex()
 
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
